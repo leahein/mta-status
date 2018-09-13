@@ -1,0 +1,10 @@
+/* secure files */
+secure.py
+
+/* caches */
+**/__pycache__/**
+
+
+/* local env */
+**/venv/**
+.python-version
