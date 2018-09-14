@@ -1,24 +1,24 @@
 pipeline {
+  agent any
   environment {
     NAME = 'leah'
-  }
-  agent {
-    any
   }
   stages {
     stage('build') {
       steps {
         sh "echo building ${env.NAME}!"
-        echo 'I\'m building...'
+        sh 'echo building...'
       }
     }
     stage('test') {
       when {
         expression {
-          fileExists('tests')
+          return fileExists('tests')
         }
       }
-      echo 'running tests...'
+      steps {
+        sh 'echo running tests...'
+      }
     }
   }
   post {
